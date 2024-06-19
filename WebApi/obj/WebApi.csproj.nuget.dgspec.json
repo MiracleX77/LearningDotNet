@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\mrbig\\Documents\\GitHub\\LearningDotNet\\WebApi\\WebApi.csproj": {}
+    "D:\\Documents\\Github\\LearningDotNet\\WebApi\\WebApi.csproj": {}
   },
   "projects": {
-    "C:\\Users\\mrbig\\Documents\\GitHub\\LearningDotNet\\WebApi\\WebApi.csproj": {
+    "D:\\Documents\\Github\\LearningDotNet\\WebApi\\WebApi.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\mrbig\\Documents\\GitHub\\LearningDotNet\\WebApi\\WebApi.csproj",
+        "projectUniqueName": "D:\\Documents\\Github\\LearningDotNet\\WebApi\\WebApi.csproj",
         "projectName": "WebApi",
-        "projectPath": "C:\\Users\\mrbig\\Documents\\GitHub\\LearningDotNet\\WebApi\\WebApi.csproj",
-        "packagesPath": "C:\\Users\\mrbig\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\mrbig\\Documents\\GitHub\\LearningDotNet\\WebApi\\obj\\",
+        "projectPath": "D:\\Documents\\Github\\LearningDotNet\\WebApi\\WebApi.csproj",
+        "packagesPath": "C:\\Users\\66993\\.nuget\\packages\\",
+        "outputPath": "D:\\Documents\\Github\\LearningDotNet\\WebApi\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\mrbig\\AppData\\Roaming\\NuGet\\NuGet.Config"
+          "C:\\Users\\66993\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net8.0"
@@ -47,6 +47,14 @@
               "target": "Package",
               "version": "[8.0.6, )"
             },
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[8.0.6, )"
+            },
+            "Microsoft.EntityFrameworkCore.SqlServer": {
+              "target": "Package",
+              "version": "[8.0.6, )"
+            },
             "Swashbuckle.AspNetCore": {
               "target": "Package",
               "version": "[6.4.0, )"
@@ -71,7 +79,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.301/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.300/PortableRuntimeIdentifierGraph.json"
         }
       }
     }
