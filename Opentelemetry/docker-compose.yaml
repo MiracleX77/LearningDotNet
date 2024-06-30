@@ -1,0 +1,69 @@
+version: "3.8"
+networks:
+  roller-network:
+    name: roller-network
+    driver: bridge
+
+services:
+  roller-service:
+    container_name: roller-service
+    build: .
+    ports:
+      - 8080:5001
+    networks:
+      - roller-network
+    depends_on:
+      - roller-db-service
+  roller-prometheus-service:
+    container_name: roller-prometheus
+    image: prom/prometheus:latest
+    ports:
+      - 9090:9090
+    volumes:
+      - ./prometheus.yml:/etc/prometheus/prometheus.yml
+    networks:
+      - roller-network
+  roller-grafana-service:
+    container_name: roller-grafana
+    image: grafana/grafana:latest
+    ports:
+      - 3000:3000
+    volumes:
+      - ./grafana-provisioning:/etc/grafana/provisioning
+    networks:
+      - roller-network
+    depends_on:
+      - roller-prometheus-service
+  roller-db-service:
+    container_name: roller-db
+    image: postgres:latest
+    ports:
+      - 5432:5432
+    environment:
+      POSTGRES_USER: user
+      POSTGRES_DB: roller
+      POSTGRES_PASSWORD: pass
+    volumes:
+      - pg-datarep:/var/lib/postgresql/data
+    networks:
+      - roller-network
+
+
+  pgadmin:
+    image: dpage/pgadmin4
+    container_name: pgadmin_monitor
+    restart: always
+    ports:
+      - "8888:80"
+    environment:
+      PGADMIN_DEFAULT_EMAIL: admin@gmail.com
+      PGADMIN_DEFAULT_PASSWORD: admin
+    volumes:
+      - pgadmin-data:/var/lib/pgadmin
+    networks:
+      - roller-network
+volumes:
+  pg-datarep:
+  pgadmin-data:
+
+
